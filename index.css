@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.container-input label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.container-input input[type="text"],
+.container-input input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#search img{
+    width: 20px;
+    height: 20px;
+}
+
+#search{
+    background-color: white;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#window {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
