@@ -4,9 +4,10 @@ const add = document.getElementById("add")
 add.addEventListener("click",()=>{
 
     let nombre = document.getElementById("name").value
+    let apellido = document.getElementById("ape").value
     let tel = document.getElementById("tel").value
 
-    agenda.addContact(nombre,tel)
+    agenda.addContact(nombre,apellido,tel)
     console.log(agenda.viewContacts())
 })
 

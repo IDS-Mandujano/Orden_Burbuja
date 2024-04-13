@@ -1,48 +1,38 @@
-import { Queue } from "./Queue.js"
+import { LinkedList } from "./LinkedList.js"
 
-export class Agenda{
+export class Agenda {
+    contactList
 
-    contacto
-
-    constructor(){
-        this.contacto = new Queue()
+    constructor() {
+        this.contactList = new LinkedList()
     }
 
-    addContact(nombre,telefono){
-        this.contacto.enqueue({nombre,telefono})
+    addContact(nombre, apellido, telefono) {
+        this.contactList.push({ nombre, apellido, telefono })
     }
 
-    viewContacts(){
-        return this.contacto.printQueue()
+    viewContacts() {
+        let current = this.contactList.head;
+        let contacts = "";
+        while (current) {
+            contacts += current.data.nombre+ " - "+current.data.apellido+" - "+current.data.telefono+"\n"
+            current = current.next;
+        }
+        return contacts
     }
-    
 
-    searchContact(nombre){
-        let encontrado = false
-        let contact = ""
-        let tempQueue = new Queue()
-
-        while(!this.contacto.isEmpty()){
-            let contacto = this.contacto.dequeue()
-            if(contacto.nombre === nombre){
-                contact = contacto.nombre+" "+contacto.telefono
-                encontrado = true;
-                return contact
+    searchContact(nombre) {
+        let current = this.contactList.head
+        while (current) {
+            if (current.data.nombre === nombre) {
+                return current.data.nombre+" - "+current.data.apellido+" - "+current.data.telefono
             }
-            tempQueue.enqueue(contacto)
+            current = current.next
         }
-
-        while (!tempQueue.isEmpty()) {
-            this.contacto.enqueue(tempQueue.dequeue())
-          }
-        
-        if(!encontrado){
-            return "contacto no encontrado"
-        }
+        return "Contacto no encontrado"
     }
 
-    deleteFIFO(){
-        this.contacto.dequeue()
+    deleteFIFO() {
+        return this.contactList.shift()
     }
-
 }
