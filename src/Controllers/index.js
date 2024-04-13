@@ -26,7 +26,7 @@ view.addEventListener("click", ()=>{
 
 const order = document.getElementById("order")
 order.addEventListener("click",()=>{
-    agenda.ordenamiento()
+    agenda.order()
 })
 
 const delFifo = document.getElementById("delFifo")

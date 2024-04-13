@@ -37,7 +37,7 @@ export class Agenda {
         return this.contactList.shift()
     }
     
-    ordenamiento(){
+    order(){
         let burbuja = new Burbuja()
         burbuja.sort(this.contactList)
     }
