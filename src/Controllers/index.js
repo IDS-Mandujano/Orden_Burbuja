@@ -19,9 +19,14 @@ search.addEventListener("click",()=>{
 })
 
 const view = document.getElementById("view")
-view.addEventListener("click", () => {
+view.addEventListener("click", ()=>{
     let window = document.getElementById("window")
     window.innerText = agenda.viewContacts()
+})
+
+const order = document.getElementById("order")
+order.addEventListener("click",()=>{
+    agenda.ordenamiento()
 })
 
 const delFifo = document.getElementById("delFifo")

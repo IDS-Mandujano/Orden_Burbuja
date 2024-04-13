@@ -1,4 +1,5 @@
 import { LinkedList } from "./LinkedList.js"
+import { Burbuja } from "./Burbuja.js"
 
 export class Agenda {
     contactList
@@ -15,7 +16,7 @@ export class Agenda {
         let current = this.contactList.head;
         let contacts = "";
         while (current) {
-            contacts += current.data.nombre+ " - "+current.data.apellido+" - "+current.data.telefono+"\n"
+            contacts += current.data.nombre+" - "+current.data.apellido+" - "+current.data.telefono+"\n"
             current = current.next;
         }
         return contacts
@@ -34,5 +35,10 @@ export class Agenda {
 
     deleteFIFO() {
         return this.contactList.shift()
+    }
+    
+    ordenamiento(){
+        let burbuja = new Burbuja()
+        burbuja.sort(this.contactList)
     }
 }
